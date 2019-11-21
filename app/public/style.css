@@ -1,8 +1,11 @@
+
+
 /* Basic background image styling. */
 .background-image {
 	background-position: center center;
 	background-repeat: no-repeat;
-	background-size: cover;
+  background-size: cover;
+  position: fixed !important; 
 }
 
 /* Styles for the alternating / transition effect. */
@@ -76,10 +79,17 @@
 	opacity: 1;
 }
 
-.jumbotron {
+.jumbotron, #bgdiv, #bgdiv2 {
     background: rgb(46, 49, 49); /* This is for ie8 and below */
     background: rgba(46, 49, 49, 0.5); 
  }
+
+ #bgdiv2 {
+   color: white;
+   text-shadow: 2px 2px black;
+ }
+
+
 
  #date {
      color: white;
