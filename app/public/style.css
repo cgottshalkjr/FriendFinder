@@ -1,0 +1,77 @@
+/* Basic background image styling. */
+.background-image {
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+/* Styles for the alternating / transition effect. */
+.toggle-image {
+ 	position: absolute;
+	width: 100%;
+	top: 0;
+	left: 0;
+ 	height: 800px;
+	transition: opacity 1s ease-in-out;
+}
+
+/* Styles for the specific images. */
+.first-image {
+	background-image: url("../public/imgs/stalker.jpg");	
+	z-index: -3;
+	opacity: 0;
+}
+
+.second-image {
+	background-image: url("../public/imgs/fassbinder1.jpg");
+	z-index: -2;
+	opacity: 0;
+}
+
+.third-image {
+	background-image: url("../public/imgs/blowout.jpg");
+	z-index: -1;
+	opacity: 0;
+}
+
+.fourth-image {
+	background-image: url("../public/imgs/bringme.jpg");	
+	z-index: -3;
+	opacity: 0;
+}
+
+.fifth-image {
+	background-image: url("../public/imgs/enigma.jpg");	
+	z-index: -3;
+	opacity: 0;
+}
+
+.sixth-image {
+	background-image: url("../public/imgs/miller.jpg");	
+	z-index: -3;
+	opacity: 0;
+}
+
+.first-image.show {
+	opacity: 1;
+}
+
+.second-image.show {
+	opacity: 1;
+}
+
+.third-image.show {
+	opacity: 1;
+}
+
+.fourth-image.show {
+	opacity: 1;
+}
+
+.fifth-image.show {
+	opacity: 1;
+}
+
+.sixth-image.show {
+	opacity: 1;
+}
