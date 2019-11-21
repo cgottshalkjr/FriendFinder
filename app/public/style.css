@@ -75,3 +75,81 @@
 .sixth-image.show {
 	opacity: 1;
 }
+
+.jumbotron {
+    background: rgb(46, 49, 49); /* This is for ie8 and below */
+    background: rgba(46, 49, 49, 0.5); 
+ }
+
+ #date {
+     color: white;
+     font-family: 'Odibee Sans', cursive;
+     letter-spacing: 2px;
+ }
+
+ #someText {
+    color: white;
+    font-family: 'Odibee Sans', cursive;
+    font-size: 32px;
+    letter-spacing: 2px;
+ }
+
+ .button2 {
+     
+    display: inline block;
+    background: rgba(46, 49, 49, 0.5); 
+    padding: 0.5em 3em;
+    border: 0.09em solid rgba(46, 49, 49, 0.5); 
+    margin: 0 0.3em 0.3em 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: 'Odibee Sans', cursive;
+    font-weight: 400;
+    color: white; 
+    text-align: center;
+    transition: all 0.15s;
+    
+ }
+
+ .button2:hover {
+     color: white;
+     border-color: rgb(46, 49, 49);
+     background: rgb(46, 49, 49);
+ }
+
+ .button2:active {
+     color: rgb(46, 49, 49);
+     border-color: rgb(46, 49, 49);
+     background: rgb(46, 49, 49);
+ }
+
+ /* body{
+    text-align:center;
+    background:#dfdfdf;
+  } */
+
+  h1{
+    text-transform:uppercase;
+    font-size:72px;
+    font-family:'Verdana';
+    padding:30px;
+  }
+
+  #form{
+color: white;
+text-shadow: 2px 2px black;
+  }
+
+ @media all and (max-width: 30em) {
+
+    .button2{
+        display: block;
+        margin: 0.4em auto;
+        float: center;
+    }
+ }
+
+
+
+   
