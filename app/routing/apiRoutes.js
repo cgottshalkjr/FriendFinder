@@ -1,4 +1,4 @@
-var directorsScores = require("../app/data/friends");
+var directorsScores = require("../data/friends");
 
 module.exports = function (app) {
 
@@ -9,9 +9,9 @@ module.exports = function (app) {
 
     app.post("/api/friends", function (req, res) {
 
-        var
+        
 
-    })
+    });
 
 
 
