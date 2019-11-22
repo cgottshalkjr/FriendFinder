@@ -204,6 +204,13 @@
                 <option value="4">4</option>
                 <option value="5">5 (Strongly Agree)</option>
             </select>
+            <br><br>
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary" id="submitButton" data-toggle="modal"
+                data-target="#bestMatchModal">
+                SUBMIT
+            </button>
+
             <br>
             <br>
         </form>
@@ -213,30 +220,63 @@
 
 
     <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="bestMatchModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"></h5>
+                </div>
+                <div class="modal-body">
+                    <h2 id="directName"></h2>
+                    <img id="directImg" src="">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
             </div>
-            <div class="modal-body">
-              ...
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-          </div>
         </div>
-      </div>
+    </div>
 
 
 
 
     <script type="text/javascript" src="../public/app.js">
+
+        $("#submitButton").on("click", function (event) {
+            event.preventDefault();
+
+            var directorData = {
+
+                name: $("#name").val().trim(),
+                photo: $("#photo").val(),
+                scores: [
+                    $("#s1").val(),
+                    $("#s2").val(),
+                    $("#s3").val(),
+                    $("#s4").val(),
+                    $("#s5").val(),
+                    $("#s6").val(),
+                    $("#s7").val(),
+                    $("#s8").val(),
+                    $("#s9").val(),
+                    $("#s10").val(),
+                ]
+            };
+            $.post("/api/friends", directorData, function (data) {
+
+                $("#directName").text(data.name);
+                $("#directImg").attr("src", data.photo);
+
+                ("#bestMatchModal").modal("toggle");
+
+
+            })
+
+        })
+
+
 
     </script>
 

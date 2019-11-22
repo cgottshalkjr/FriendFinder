@@ -104,7 +104,7 @@
     letter-spacing: 2px;
  }
 
- .button2 {
+ .button2, #submitButton {
      
     display: inline block;
     background: rgba(46, 49, 49, 0.5); 
