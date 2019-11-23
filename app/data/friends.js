@@ -10,7 +10,8 @@ var directors = [
     }, {
         name: "Ingmar Bergman",
         photo: "https://www.dga.org/-/media/Images/DGAQ-Article-Images/DGA-Quarterly/1201-Winter-2012/profile-ingmar-bergman-1.ashx?la=en&hash=4FFD49EE5CC474C72DF63D693676B00B8DBAF4FF",
-        scores: [4, 4, 4, 5, 5, 5, 2, 4, 5, 5]
+        scores: [2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
+        link: "https://www.criterion.com/boxsets/1427-ingmar-bergman-s-cinema"
     }, {
         name: "Akira Kurosawa",
         photo: "https://8hours-prod.s3.amazonaws.com/uploads/2018/08/AkiraKurosawa2-427x640.jpg",

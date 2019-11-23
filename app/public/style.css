@@ -79,9 +79,31 @@
 	opacity: 1;
 }
 
-.jumbotron, #bgdiv, #bgdiv2 {
+.jumbotron, #bgdiv, #bgdiv2, #footer1 {
     background: rgb(46, 49, 49); /* This is for ie8 and below */
     background: rgba(46, 49, 49, 0.5); 
+ }
+
+ .modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  max-width: 100%;
+ }
+
+ #footer1 {
+   width: 100%;
+   text-shadow: 2px 2px black;
+ }
+
+ a {
+   color: white;
+ }
+
+ a:hover {
+   color: white;
  }
 
  #bgdiv2 {
