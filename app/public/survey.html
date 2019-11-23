@@ -229,14 +229,16 @@
     <div class="modal fade" id="bestMatchModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
-            <div class="modal-content">
+            <div class="modal-content text-center" id="modalStuff">
                 <!-- <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel"></h5>
                 </div> -->
                 <div class="modal-body" id="modalStyle">
+                    <h2 id="modalText">Your best match is:</h2>
                     <h2 id="directName"></h2>
                     <img class="img-fluid" id="directImg" src="#">
                     <a href="#" id="directLink"></a>
+                    <h5 id="directFilms"></h5>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -252,32 +254,39 @@
         $("#submitButton").on("click", function (event) {
             event.preventDefault();
 
-            var directorData = {
+            if ($("#name").val() === "" || $("#photo").val() === "" || $("#s1").val() === "" || $("#s2").val() === "" || $("#s3").val() === "" || $("#s4").val() === "" || $("#s5").val() === "" || $("#s6").val() === "" || $("#s7").val() === "" || $("#s8").val() === "" || $("#s9").val() === "" || $("#s10").val() === "") {
 
-                name: $("#name").val().trim(),
-                photo: $("#photo").val(),
-                scores: [
-                    $("#s1").val(),
-                    $("#s2").val(),
-                    $("#s3").val(),
-                    $("#s4").val(),
-                    $("#s5").val(),
-                    $("#s6").val(),
-                    $("#s7").val(),
-                    $("#s8").val(),
-                    $("#s9").val(),
-                    $("#s10").val(),
-                ]
-            };
+                return alert("PLEASE FILL OUT EVERY SINGLE DANG FIELD!!!")
 
-            console.log(directorData);
-            $.post("/api/friends", directorData, function (data) {
+            } else {
 
-                console.log(data);
-                $("#directName").text(data.name);
-                $("#directImg").attr("src", data.photo);
-            });
+                var directorData = {
 
+                    name: $("#name").val().trim(),
+                    photo: $("#photo").val(),
+                    scores: [
+                        $("#s1").val(),
+                        $("#s2").val(),
+                        $("#s3").val(),
+                        $("#s4").val(),
+                        $("#s5").val(),
+                        $("#s6").val(),
+                        $("#s7").val(),
+                        $("#s8").val(),
+                        $("#s9").val(),
+                        $("#s10").val(),
+                    ]
+                };
+
+                console.log(directorData);
+                $.post("/api/friends", directorData, function (data) {
+
+                    console.log(data);
+                    $("#directName").text(data.name);
+                    $("#directImg").attr("src", data.photo);
+                    $("#directFilms").text(data.films);
+                });
+            }
         })
 
     </script>
