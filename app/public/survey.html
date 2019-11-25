@@ -212,8 +212,7 @@
             </select>
             <br><br>
             <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary" id="submitButton" data-toggle="modal"
-                data-target="#bestMatchModal">
+            <button type="button" class="btn btn-primary" id="submitButton">
                 SUBMIT
             </button>
 
@@ -282,9 +281,11 @@
                 $.post("/api/friends", directorData, function (data) {
 
                     console.log(data);
+
                     $("#directName").text(data.name);
                     $("#directImg").attr("src", data.photo);
-                    $("#directFilms").text(data.films);
+                    $("#directFilms").text(data.films || "");
+                    $("#bestMatchModal").modal("show");
                 });
             }
         })
